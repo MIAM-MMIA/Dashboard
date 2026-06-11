@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MIAM / MMIA Dashboard</title>
+  <meta name="description" content="Quick access dashboard for Michigan Mechanical Inspectors Association resources, training, webinars, dues, certificates, jobs, and code updates." />
+  <style>
+    :root{
+      --blue:#062b66;
+      --blue2:#0a3f8a;
+      --light:#f4f8fd;
+      --line:#dbe5f1;
+      --text:#12223a;
+      --muted:#5f6f86;
+      --green:#0f7a3e;
+      --red:#c91f2d;
+      --orange:#d85c00;
+      --purple:#5c35a8;
+      --shadow:0 10px 28px rgba(6,43,102,.12);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fff;color:var(--text);line-height:1.45}
+    a{color:inherit;text-decoration:none}
+    .skip{position:absolute;left:-999px;top:auto}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.75rem 1rem;border-radius:10px;z-index:99}
+    header{background:linear-gradient(135deg,var(--blue),#031636);color:#fff}
+    .wrap{max-width:1180px;margin:auto;padding:0 18px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:18px}
+    .brand{display:flex;align-items:center;gap:14px;min-width:260px}
+    .logo{width:62px;height:62px;border:3px solid #fff;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:20px;letter-spacing:.04em}
+    .brand h1{margin:0;font-size:1.12rem;line-height:1.15}.brand p{margin:.25rem 0 0;font-size:.9rem;opacity:.86}
+    nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+    nav a{font-size:.9rem;padding:.6rem .78rem;border-radius:999px;background:rgba(255,255,255,.08)}
+    nav a:hover,nav a:focus{background:#fff;color:var(--blue)}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#eaf5ff,#fff);border-bottom:1px solid var(--line)}
+    .hero .wrap{padding:48px 18px 34px}.hero h2{font-size:clamp(2rem,5vw,4rem);line-height:1;margin:.2rem 0 .75rem;color:var(--blue)}
+    .hero p{font-size:clamp(1rem,2vw,1.25rem);max-width:760px;margin:0 0 1.25rem;color:#263a55}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1rem;border-radius:12px;border:1px solid var(--blue2);background:var(--blue2);color:#fff;font-weight:700;min-height:44px}
+    .btn.secondary{background:#fff;color:var(--blue2)}.btn:hover,.btn:focus{transform:translateY(-1px);box-shadow:var(--shadow)}
+    .quick{padding:26px 0;background:#fff}.tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+    .tile{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:156px;padding:20px 12px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);transition:.15s ease}
+    .tile:hover,.tile:focus{transform:translateY(-3px);border-color:#aac5e6}.tile svg{width:48px;height:48px;margin-bottom:12px;stroke:var(--blue2)}
+    .tile h3{margin:0;font-size:1.02rem;color:var(--blue)}.tile small{display:block;color:var(--muted);margin-top:.35rem}
+    main{background:var(--light);padding:28px 0 36px}.grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.card-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--blue);color:#fff}.card-head.red{background:var(--red)}.card-head.green{background:var(--green)}.card-head.purple{background:var(--purple)}.card h3{margin:0;font-size:1rem}.view{font-size:.85rem;text-decoration:underline}.body{padding:16px}.item{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.item:last-child{border-bottom:0}.date{width:56px;text-align:center;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;flex-shrink:0}.date span{display:block;background:var(--blue2);color:#fff;font-size:.76rem;font-weight:800;padding:3px}.date strong{display:block;font-size:1.25rem;color:var(--blue);padding:4px 0}.item h4{margin:0 0 2px;font-size:1rem}.item p{margin:0;color:var(--muted);font-size:.9rem}.mini-btn{border:1px solid var(--blue2);color:var(--blue2);border-radius:9px;padding:.45rem .65rem;font-weight:700;font-size:.86rem;white-space:nowrap}.links a{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-weight:650}.links a:last-child{border-bottom:0}.links span{color:var(--muted)}
+    .lower{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:18px}.sponsor-row{display:flex;flex-wrap:wrap;gap:10px}.sponsor{border:1px solid var(--line);border-radius:12px;padding:.7rem .8rem;background:#f9fbff;font-weight:800;color:var(--blue)}
+    footer{background:#031636;color:#fff;padding:22px 0}.foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.9rem;opacity:.9}.foot a{text-decoration:underline}
+    @media (max-width:980px){.tiles{grid-template-columns:repeat(3,1fr)}.grid,.lower{grid-template-columns:1fr}.topbar{align-items:flex-start;flex-direction:column}nav{justify-content:flex-start}.hero .wrap{padding-top:34px}}
+    @media (max-width:600px){.wrap{padding:0 14px}.topbar{padding:14px 0}.brand{min-width:0}.logo{width:52px;height:52px;font-size:17px}nav{display:none}.hero .wrap{padding:28px 14px}.hero-actions .btn{width:100%}.tiles{grid-template-columns:repeat(2,1fr);gap:10px}.tile{min-height:132px;padding:16px 8px}.tile svg{width:38px;height:38px}.tile h3{font-size:.95rem}.tile small{display:none}.item{grid-template-columns:auto 1fr}.item .mini-btn{grid-column:2;width:max-content}.lower{margin-top:14px}main{padding-top:16px}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap topbar">
+    <a class="brand" href="https://www.mechanicalinspector.com/" aria-label="MIAM MMIA home">
+      <div class="logo">MIAM</div>
+      <div><h1>Michigan Mechanical Inspectors</h1><p>MIAM / MMIA Quick Access Dashboard</p></div>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="https://www.mechanicalinspector.com/">Home</a>
+      <a href="https://www.mechanicalinspector.com/education.html">Education</a>
+      <a href="https://www.mechanicalinspector.com/webinars.html">Webinars</a>
+      <a href="https://www.mechanicalinspector.com/news--alerts.html">News & Alerts</a>
+      <a href="https://www.mechanicalinspector.com/job-openings.html">Jobs</a>
+      <a href="https://www.mechanicalinspector.com/contact-info.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<section class="hero">
+  <div class="wrap">
+    <h2>Welcome to MIAM / MMIA</h2>
+    <p>Fast access to dues, classes, webinars, certificates, code updates, jobs, and Bureau of Construction Codes resources for Michigan mechanical inspectors.</p>
+    <div class="hero-actions">
+      <a class="btn" href="https://www.mechanicalinspector.com/membership--dues.html">Pay Dues</a>
+      <a class="btn secondary" href="https://www.mechanicalinspector.com/061826.html">Register for Next Class</a>
+      <a class="btn secondary" href="https://www.mechanicalinspector.com/webinars.html">View Webinars</a>
+    </div>
+  </div>
+</section>
+<section class="quick" aria-label="Quick actions">
+  <div class="wrap tiles">
+    <a class="tile" href="https://www.mechanicalinspector.com/membership--dues.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg><h3>Pay Dues</h3><small>MIAM & MMIA</small></a>
+    <a class="tile" href="https://www.mechanicalinspector.com/061826.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 10h16M8 14h3M13 14h3M8 18h3"/></svg><h3>Register for Class</h3><small>Upcoming live classes</small></a>
+    <a class="tile" href="https://www.mechanicalinspector.com/webinars.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M10 9l5 3-5 3zM8 21h8"/></svg><h3>Webinars</h3><small>On-demand credits</small></a>
+    <a class="tile" href="https://www.mechanicalinspector.com/certificates.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M5 4h14v13H5zM8 8h8M8 12h5"/><circle cx="17" cy="17" r="3"/><path d="M15.5 19.5 14 22M18.5 19.5 20 22"/></svg><h3>Certificates</h3><small>Credits & records</small></a>
+    <a class="tile" href="https://www.mechanicalinspector.com/2026-fall-conference1.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M8 13h8M8 17h5"/></svg><h3>Upcoming Events</h3><small>Meetings & conferences</small></a>
+    <a class="tile" href="https://www.mechanicalinspector.com/mc-mi.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M8 10V8a4 4 0 0 1 8 0v2M5 10h14M7 14a5 5 0 0 0 10 0M4 21a8 8 0 0 1 16 0"/></svg><h3>Become an Inspector</h3><small>Licensing info</small></a>
+  </div>
+</section>
+<main id="main">
+  <div class="wrap">
+    <div class="grid">
+      <section class="card">
+        <div class="card-head"><h3>Upcoming Training & Events</h3><a class="view" href="https://www.mechanicalinspector.com/education.html">View All</a></div>
+        <div class="body">
+          <div class="item"><div class="date"><span>JUN</span><strong>18</strong></div><div><h4>A2L Refrigerants</h4><p>June 18, 2026 · Behler-Young Training Center, Troy · 4 Technical Credits</p></div><a class="mini-btn" href="https://www.mechanicalinspector.com/061826.html">Register</a></div>
+          <div class="item"><div class="date"><span>OCT</span><strong>29</strong></div><div><h4>2026 MIAM Fall Conference</h4><p>October 29–30, 2026 · Call for speakers and vendors</p></div><a class="mini-btn" href="https://www.mechanicalinspector.com/2026-fall-conference1.html">Details</a></div>
+          <div class="item"><div class="date"><span>ANY</span><strong>47</strong></div><div><h4>2024–2027 Webinar Series</h4><p>On-demand webinars offering 47 total credits.</p></div><a class="mini-btn" href="https://www.mechanicalinspector.com/webinars.html">Webinars</a></div>
+        </div>
+      </section>
+      <section class="card">
+        <div class="card-head red"><h3>Code / LARA Updates</h3><a class="view" href="https://www.mechanicalinspector.com/news--alerts.html">View All</a></div>
+        <div class="body links">
+          <a href="https://www.mechanicalinspector.com/2021-mechanical-code.html">2021 Mechanical Code <span>›</span></a>
+          <a href="https://www.mechanicalinspector.com/2021-michigan-building-code.html">2021 Building Code <span>›</span></a>
+          <a href="https://www.mechanicalinspector.com/2024-mrc.html">2024 Residential Code <span>›</span></a>
+          <a href="https://www.mechanicalinspector.com/re-reg-reqrsquos.html">Re-Registration Requirements <span>›</span></a>
+          <a href="https://www.mechanicalinspector.com/bcc-resources.html">BCC Resources <span>›</span></a>
+        </div>
+      </section>
+      <section class="card">
+        <div class="card-head"><h3>Member Quick Links</h3><a class="view" href="https://www.mechanicalinspector.com/links.html">More</a></div>
+        <div class="body links">
+          <a href="https://www.mechanicalinspector.com/class-list.html">MIAM & MMIA Class Listing <span>›</span></a>
+          <a href="https://www.mechanicalinspector.com/course-material-2015-2018.html">Course Materials <span>›</span></a>
+          <a href="https://www.mechanicalinspector.com/webinars.html">Webinar Quiz & Answer Sheets <span>›</span></a>
+          <a href="https://www.mechanicalinspector.com/certificates.html">Certificates <span>›</span></a>
+          <a href="https://www.mechanicalinspector.com/contact-info.html">Contact Info <span>›</span></a>
+        </div>
+      </section>
+    </div>
+    <div class="lower">
+      <section class="card"><div class="card-head"><h3>Sponsors</h3><a class="view" href="https://www.mechanicalinspector.com/sponsor-listing.html">View All</a></div><div class="body"><p>Thank you to the organizations that support mechanical inspector education.</p><div class="sponsor-row"><a class="sponsor" href="https://www.mechanicalinspector.com/sponsor-listing.html">Sponsor Listing</a><a class="sponsor" href="https://www.mechanicalinspector.com/mmia-sponsorship-appeal.html">Sponsor MMIA</a><a class="sponsor" href="https://www.mechanicalinspector.com/2026-fall-conference1.html">Sponsor MIAM</a></div></div></section>
+      <section class="card"><div class="card-head green"><h3>Looking for Work?</h3></div><div class="body"><p>View mechanical inspector openings or post your availability.</p><p><a class="btn secondary" href="https://www.mechanicalinspector.com/job-openings.html">View Job Board</a> <a class="btn secondary" href="https://www.mechanicalinspector.com/looking-for-work.html">Post Your Resume</a></p></div></section>
+      <section class="card"><div class="card-head purple"><h3>About MIAM / MMIA</h3></div><div class="body"><p>MIAM is a statewide organization supporting mechanical inspectors, building officials, contractors, utilities, and related professionals. MMIA serves Region 9 in southeastern Michigan.</p><p><a class="btn secondary" href="https://www.mechanicalinspector.com/">Learn More</a></p></div></section>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="wrap foot"><div>© 2026 Michigan Mechanical Inspectors · MIAM / MMIA</div><div><a href="https://www.mechanicalinspector.com/contact-info.html">Contact</a> · <a href="https://www.mechanicalinspector.com/bcc-resources.html">BCC Resources</a></div></div>
+</footer>
+</body>
+</html>
