@@ -1,0 +1,840 @@
+<!-- ============================================================
+     MIAM / MMIA Dashboard &mdash; Weebly Embed Version
+     Paste this entire block into a Weebly "Embed Code" element.
+     Do NOT use the full index.html; it will conflict with Weebly's
+     own <html>/<head>/<body> and cause the garbled display.
+     ============================================================ -->
+
+<style>
+/* All selectors are prefixed with #miam-dash to avoid
+   clashing with Weebly's own styles. */
+
+#miam-dash {
+    --blue: #062b66;
+    --blue2: #0a3f8a;
+    --light: #f4f8fd;
+    --line: #dbe5f1;
+    --text: #12223a;
+    --muted: #5f6f86;
+    --green: #0f7a3e;
+    --red: #c91f2d;
+    --purple: #5c35a8;
+    --shadow: 0 10px 28px rgba(6,43,102,.12);
+    --radius: 18px;
+
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.45;
+    box-sizing: border-box;
+}
+
+#miam-dash *, #miam-dash *::before, #miam-dash *::after {
+    box-sizing: border-box;
+}
+
+#miam-dash a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Hero */
+#miam-dash .md-hero {
+    background: linear-gradient(180deg,#eaf5ff,#fff);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 36px 24px 28px;
+    margin-bottom: 20px;
+}
+
+#miam-dash .md-hero h2 {
+    font-size: clamp(1.6rem,4vw,3rem);
+    line-height: 1;
+    margin: 0 0 .6rem;
+    color: var(--blue);
+}
+
+#miam-dash .md-hero p {
+    font-size: clamp(.95rem,2vw,1.15rem);
+    margin: 0 0 1.2rem;
+    color: #263a55;
+    max-width: 680px;
+}
+
+#miam-dash .md-hero-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+#miam-dash .md-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: .7rem 1.1rem;
+    border-radius: 12px;
+    border: 1px solid var(--blue2);
+    background: var(--blue2);
+    color: #fff !important;
+    font-weight: 700;
+    font-size: .95rem;
+    min-height: 44px;
+    transition: .15s ease;
+    cursor: pointer;
+}
+
+#miam-dash .md-btn.secondary {
+    background: #fff;
+    color: var(--blue2) !important;
+}
+
+#miam-dash .md-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+/* Grid */
+#miam-dash .md-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+    gap: 18px;
+}
+
+#miam-dash .md-lower {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+/* Cards */
+#miam-dash .md-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+#miam-dash .md-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: var(--blue);
+    color: #fff;
+}
+
+#miam-dash .md-card-head.red    { background: var(--red); }
+#miam-dash .md-card-head.green  { background: var(--green); }
+#miam-dash .md-card-head.purple { background: var(--purple); }
+
+#miam-dash .md-card-head h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #fff;
+}
+
+#miam-dash .md-view {
+    font-size: .85rem;
+    text-decoration: underline;
+    color: #fff;
+}
+
+#miam-dash .md-body {
+    padding: 16px;
+}
+
+/* Event items */
+#miam-dash .md-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+#miam-dash .md-item:last-child { border-bottom: 0; }
+
+#miam-dash .md-date {
+    width: 56px;
+    text-align: center;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    flex-shrink: 0;
+}
+
+#miam-dash .md-date span {
+    display: block;
+    background: var(--blue2);
+    color: #fff;
+    font-size: .76rem;
+    font-weight: 800;
+    padding: 3px;
+}
+
+#miam-dash .md-date strong {
+    display: block;
+    font-size: 1.25rem;
+    color: var(--blue);
+    padding: 4px 0;
+}
+
+#miam-dash .md-item h4 {
+    margin: 0 0 2px;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+#miam-dash .md-item p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+#miam-dash .md-mini-btn {
+    border: 1px solid var(--blue2);
+    color: var(--blue2) !important;
+    border-radius: 9px;
+    padding: .45rem .65rem;
+    font-weight: 700;
+    font-size: .86rem;
+    white-space: nowrap;
+}
+
+/* Link lists */
+#miam-dash .md-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-weight: 600;
+    color: var(--text);
+}
+
+#miam-dash .md-links a:last-child { border-bottom: 0; }
+
+#miam-dash .md-links span { color: var(--muted); }
+
+/* Sponsors */
+#miam-dash .md-sponsor-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#miam-dash .md-sponsor {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: .7rem .8rem;
+    background: #f9fbff;
+    font-weight: 800;
+    color: var(--blue) !important;
+}
+
+/* Modal overlay */
+#md-resume-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(6,43,102,.55);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+#md-resume-overlay.open {
+    display: flex;
+}
+
+#md-resume-modal {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 24px 60px rgba(6,43,102,.22);
+    width: 100%;
+    max-width: 560px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: mdSlideIn .2s ease;
+}
+
+@keyframes mdSlideIn {
+    from { transform: translateY(24px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+#md-resume-modal .md-modal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: #0f7a3e;
+    border-radius: 18px 18px 0 0;
+    color: #fff;
+}
+
+#md-resume-modal .md-modal-head h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #fff;
+}
+
+#md-modal-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+    opacity: .85;
+}
+
+#md-modal-close:hover { opacity: 1; }
+
+#md-resume-modal .md-modal-body {
+    padding: 20px;
+}
+
+#md-resume-modal .md-field {
+    margin-bottom: 16px;
+}
+
+#md-resume-modal label {
+    display: block;
+    font-size: .88rem;
+    font-weight: 700;
+    color: #062b66;
+    margin-bottom: 5px;
+}
+
+#md-resume-modal input[type="text"],
+#md-resume-modal input[type="email"],
+#md-resume-modal input[type="tel"],
+#md-resume-modal select,
+#md-resume-modal textarea {
+    width: 100%;
+    padding: .6rem .75rem;
+    border: 1px solid #c8d8ec;
+    border-radius: 9px;
+    font-size: .95rem;
+    font-family: inherit;
+    color: #12223a;
+    background: #f7faff;
+    transition: border-color .15s;
+}
+
+#md-resume-modal input:focus,
+#md-resume-modal select:focus,
+#md-resume-modal textarea:focus {
+    outline: none;
+    border-color: #0a3f8a;
+    background: #fff;
+}
+
+#md-resume-modal textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+#md-resume-modal .md-field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+#md-resume-modal .md-section-label {
+    font-size: .78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: #5f6f86;
+    margin: 20px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #dbe5f1;
+}
+
+#md-resume-modal .md-check-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 14px;
+}
+
+#md-resume-modal .md-check-grid label {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    color: #12223a;
+}
+
+#md-resume-modal .md-check-grid input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    accent-color: #0a3f8a;
+}
+
+#md-resume-modal .md-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 0 20px 20px;
+}
+
+#md-resume-modal .md-submit-btn {
+    background: #0f7a3e;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: .7rem 1.4rem;
+    font-size: .95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .15s ease;
+}
+
+#md-resume-modal .md-submit-btn:hover {
+    background: #0a5e2f;
+    transform: translateY(-1px);
+}
+
+#md-resume-modal .md-cancel-btn {
+    background: #fff;
+    color: #5f6f86;
+    border: 1px solid #c8d8ec;
+    border-radius: 10px;
+    padding: .7rem 1.1rem;
+    font-size: .95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#md-resume-modal .md-cancel-btn:hover { background: #f4f8fd; }
+
+#md-resume-success {
+    display: none;
+    text-align: center;
+    padding: 40px 24px;
+}
+
+#md-resume-success .md-check-icon {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+#md-resume-success h4 {
+    color: #0f7a3e;
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+}
+
+#md-resume-success p {
+    color: #5f6f86;
+    margin: 0 0 20px;
+    font-size: .95rem;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+    #miam-dash .md-grid,
+    #miam-dash .md-lower {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    #miam-dash .md-hero { padding: 22px 14px 18px; }
+    #miam-dash .md-hero-actions .md-btn { width: 100%; }
+    #miam-dash .md-item { grid-template-columns: auto 1fr; }
+    #miam-dash .md-item .md-mini-btn { grid-column: 2; width: max-content; }
+}
+</style>
+
+<div id="miam-dash">
+
+    <!-- Hero -->
+    <div class="md-hero">
+        <h2>Welcome to MIAM / MMIA</h2>
+        <p>Supporting Michigan Mechanical Inspectors through education and communication.</p>
+        <div class="md-hero-actions">
+            <a class="md-btn" href="https://www.mechanicalinspector.com/membership--dues.html">Pay Dues</a>
+            <a class="md-btn secondary" href="https://www.mechanicalinspector.com/061826.html">Register for Next Class</a>
+            <a class="md-btn secondary" href="https://www.mechanicalinspector.com/webinars.html">View Webinars</a>
+        </div>
+    </div>
+
+    <!-- Top row of cards -->
+    <div class="md-grid">
+
+        <!-- Upcoming Training -->
+        <section class="md-card">
+            <div class="md-card-head">
+                <h3>Upcoming Training &amp; Events</h3>
+                <a class="md-view" href="https://www.mechanicalinspector.com/education.html">View All</a>
+            </div>
+            <div class="md-body">
+                <div class="md-item">
+                    <div class="md-date"><span>JUN</span><strong>18</strong></div>
+                    <div>
+                        <h4>A2L Refrigerants</h4>
+                        <p>June 18, 2026 &middot; Behler-Young Training Center, Troy &middot; 4 Technical Credits</p>
+                    </div>
+                    <a class="md-mini-btn" href="https://www.mechanicalinspector.com/061826.html">Register</a>
+                </div>
+                <div class="md-item">
+                    <div class="md-date"><span>OCT</span><strong>29</strong></div>
+                    <div>
+                        <h4>2026 MIAM Fall Conference</h4>
+                        <p>October 29&ndash;30, 2026 &middot; Call for speakers and vendors</p>
+                    </div>
+                    <a class="md-mini-btn" href="https://www.mechanicalinspector.com/2026-fall-conference1.html">Details</a>
+                </div>
+                <div class="md-item">
+                    <div class="md-date"><span>ANY</span><strong>47</strong></div>
+                    <div>
+                        <h4>2024&ndash;2027 Webinar Series</h4>
+                        <p>On-demand webinars offering 47 total credits.</p>
+                    </div>
+                    <a class="md-mini-btn" href="https://www.mechanicalinspector.com/webinars.html">Webinars</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code / LARA Updates -->
+        <section class="md-card">
+            <div class="md-card-head red">
+                <h3>Code / LARA Updates</h3>
+                <a class="md-view" href="https://www.mechanicalinspector.com/news--alerts.html">View All</a>
+            </div>
+            <div class="md-body md-links">
+                <a href="https://www.mechanicalinspector.com/2021-mechanical-code.html">2021 Mechanical Code <span>&rsaquo;</span></a>
+                <a href="https://www.mechanicalinspector.com/2021-michigan-building-code.html">2021 Building Code <span>&rsaquo;</span></a>
+                <a href="https://www.mechanicalinspector.com/2024-mrc.html">2024 Residential Code <span>&rsaquo;</span></a>
+                <a href="https://www.mechanicalinspector.com/re-reg-reqrsquos.html">Re-Registration Requirements <span>&rsaquo;</span></a>
+                <a href="https://www.mechanicalinspector.com/bcc-resources.html">BCC Resources <span>&rsaquo;</span></a>
+            </div>
+        </section>
+
+        <!-- Member Quick Links -->
+        <section class="md-card">
+            <div class="md-card-head">
+                <h3>Member Quick Links</h3>
+                <a class="md-view" href="https://www.mechanicalinspector.com/links.html">More</a>
+            </div>
+            <div class="md-body md-links">
+                <a href="https://www.mechanicalinspector.com/class-list.html">MIAM &amp; MMIA Class Listing <span>&rsaquo;</span></a>
+                <a href="https://www.mechanicalinspector.com/course-material-2015-2018.html">Course Materials <span>&rsaquo;</span></a>
+                <a href="https://www.mechanicalinspector.com/webinars.html">Webinar Quiz &amp; Answer Sheets <span>&rsaquo;</span></a>
+                <a href="https://www.mechanicalinspector.com/certificates.html">Certificates <span>&rsaquo;</span></a>
+                <a href="https://www.mechanicalinspector.com/contact-info.html">Contact Info <span>&rsaquo;</span></a>
+            </div>
+        </section>
+
+    </div><!-- /md-grid -->
+
+    <!-- Bottom row of cards -->
+    <div class="md-lower">
+
+        <!-- Sponsors -->
+        <section class="md-card">
+            <div class="md-card-head">
+                <h3>Sponsors</h3>
+                <a class="md-view" href="https://www.mechanicalinspector.com/sponsor-listing.html">View All</a>
+            </div>
+            <div class="md-body">
+                <p>Thank you to the organizations that support mechanical inspector education.</p>
+                <div class="md-sponsor-row">
+                    <a class="md-sponsor" href="https://www.mechanicalinspector.com/sponsor-listing.html">Sponsor Listing</a>
+                    <a class="md-sponsor" href="https://www.mechanicalinspector.com/mmia-sponsorship-appeal.html">Sponsor MMIA</a>
+                    <a class="md-sponsor" href="https://www.mechanicalinspector.com/2026-fall-conference1.html">Sponsor MIAM</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Looking for Work -->
+        <section class="md-card">
+            <div class="md-card-head green">
+                <h3>Looking for Work?</h3>
+            </div>
+            <div class="md-body">
+                <p>View mechanical inspector openings or post your availability.</p>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+                    <a class="md-btn secondary" href="https://www.mechanicalinspector.com/job-openings.html">View Job Board</a>
+                    <button class="md-btn secondary" onclick="document.getElementById('md-resume-overlay').classList.add('open')">Post Your Resume</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="md-card">
+            <div class="md-card-head purple">
+                <h3>About MIAM / MMIA</h3>
+            </div>
+            <div class="md-body">
+                <p>MIAM is a statewide organization supporting mechanical inspectors, building officials, contractors, utilities, and related professionals. MMIA serves Region 9 in southeastern Michigan.</p>
+                <a class="md-btn secondary" href="https://www.mechanicalinspector.com/" style="margin-top:8px;display:inline-flex;">Learn More</a>
+            </div>
+        </section>
+
+    </div><!-- /md-lower -->
+
+</div><!-- /miam-dash -->
+
+<!-- ── Resume Modal ── -->
+<div id="md-resume-overlay" role="dialog" aria-modal="true" aria-labelledby="md-modal-title">
+  <div id="md-resume-modal">
+
+    <div class="md-modal-head">
+      <h3 id="md-modal-title">Post Your Availability</h3>
+      <button id="md-modal-close" aria-label="Close" onclick="mdCloseModal()">&times;</button>
+    </div>
+
+    <!-- Form -->
+    <div id="md-resume-form-wrap">
+      <div class="md-modal-body">
+
+        <p class="md-section-label">Contact Information</p>
+
+        <div class="md-field-row">
+          <div class="md-field">
+            <label for="md-fname">First Name *</label>
+            <input type="text" id="md-fname" placeholder="Jane" required>
+          </div>
+          <div class="md-field">
+            <label for="md-lname">Last Name *</label>
+            <input type="text" id="md-lname" placeholder="Smith" required>
+          </div>
+        </div>
+
+        <div class="md-field-row">
+          <div class="md-field">
+            <label for="md-email">Email Address *</label>
+            <input type="email" id="md-email" placeholder="you@example.com" required>
+          </div>
+          <div class="md-field">
+            <label for="md-phone">Phone Number</label>
+            <input type="tel" id="md-phone" placeholder="(555) 000-0000">
+          </div>
+        </div>
+
+        <p class="md-section-label">Type of Work Sought</p>
+
+        <div class="md-field">
+          <label for="md-work-type">Employment Type *</label>
+          <select id="md-work-type">
+            <option value="">-- Select --</option>
+            <option>Full-Time</option>
+            <option>Part-Time</option>
+            <option>Contract / Per Diem</option>
+            <option>Temporary / Seasonal</option>
+            <option>Open to Any</option>
+          </select>
+        </div>
+
+        <div class="md-field">
+          <label>Inspection Discipline(s)</label>
+          <div class="md-check-grid">
+            <label><input type="checkbox" value="Mechanical"> Mechanical</label>
+            <label><input type="checkbox" value="Plumbing"> Plumbing</label>
+            <label><input type="checkbox" value="Electrical"> Electrical</label>
+            <label><input type="checkbox" value="Building"> Building / Structural</label>
+            <label><input type="checkbox" value="HVAC"> HVAC</label>
+            <label><input type="checkbox" value="Fire"> Fire Suppression</label>
+            <label><input type="checkbox" value="Plans Review"> Plans Review</label>
+            <label><input type="checkbox" value="Other"> Other</label>
+          </div>
+        </div>
+
+        <div class="md-field" style="margin-top:12px;">
+          <label for="md-work-other">Other / Additional Work Description</label>
+          <input type="text" id="md-work-other" placeholder="e.g. Plan review, code consulting...">
+        </div>
+
+        <p class="md-section-label">Qualifications &amp; Certifications</p>
+
+        <div class="md-field">
+          <label>LARA License / Certification Level(s)</label>
+          <div class="md-check-grid">
+            <label><input type="checkbox" value="Act 54 Mechanical Inspector"> Act 54 &ndash; Mechanical</label>
+            <label><input type="checkbox" value="Act 54 Plumbing Inspector"> Act 54 &ndash; Plumbing</label>
+            <label><input type="checkbox" value="Act 230 Building Inspector"> Act 230 &ndash; Building</label>
+            <label><input type="checkbox" value="Plans Examiner"> Plans Examiner</label>
+            <label><input type="checkbox" value="ICC Certified"> ICC Certified</label>
+            <label><input type="checkbox" value="BPO License"> BPO License</label>
+          </div>
+        </div>
+
+        <div class="md-field-row" style="margin-top:12px;">
+          <div class="md-field">
+            <label for="md-license-num">License / Certificate Number(s)</label>
+            <input type="text" id="md-license-num" placeholder="e.g. MI-MECH-12345">
+          </div>
+          <div class="md-field">
+            <label for="md-years-exp">Years of Experience</label>
+            <select id="md-years-exp">
+              <option value="">-- Select --</option>
+              <option>Less than 1 year</option>
+              <option>1&ndash;3 years</option>
+              <option>4&ndash;7 years</option>
+              <option>8&ndash;15 years</option>
+              <option>15+ years</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="md-field">
+          <label for="md-quals">Additional Qualifications / Notes</label>
+          <textarea id="md-quals" placeholder="Describe any additional training, specialties, software skills, or relevant experience..."></textarea>
+        </div>
+
+        <p class="md-section-label">Geographic Availability</p>
+
+        <div class="md-field">
+          <label for="md-geo-primary">Primary City / County / Region *</label>
+          <input type="text" id="md-geo-primary" placeholder="e.g. Oakland County, Metro Detroit, Lansing area">
+        </div>
+
+        <div class="md-field">
+          <label for="md-geo-range">Willing to Travel</label>
+          <select id="md-geo-range">
+            <option value="">-- Select --</option>
+            <option>Local only (within 25 miles)</option>
+            <option>Regional (25&ndash;75 miles)</option>
+            <option>Statewide (Michigan)</option>
+            <option>Multi-state / Flexible</option>
+          </select>
+        </div>
+
+        <div class="md-field">
+          <label for="md-geo-notes">Geographic Notes</label>
+          <input type="text" id="md-geo-notes" placeholder="e.g. Available in Wayne, Oakland &amp; Macomb counties">
+        </div>
+
+      </div><!-- /md-modal-body -->
+
+      <div class="md-modal-footer">
+        <button class="md-cancel-btn" onclick="mdCloseModal()">Cancel</button>
+        <button class="md-submit-btn" onclick="mdSubmitResume()">Send My Availability &#10148;</button>
+      </div>
+    </div><!-- /md-resume-form-wrap -->
+
+    <!-- Success state -->
+    <div id="md-resume-success">
+      <div class="md-check-icon">&#10003;</div>
+      <h4>Submission Sent!</h4>
+      <p>Your availability has been emailed to the MIAM / MMIA jobs coordinator.<br>We&rsquo;ll be in touch if there&rsquo;s a match.</p>
+      <button class="md-submit-btn" onclick="mdCloseModal()">Close</button>
+    </div>
+
+  </div><!-- /md-resume-modal -->
+</div><!-- /md-resume-overlay -->
+
+<script>
+function mdCloseModal() {
+    document.getElementById('md-resume-overlay').classList.remove('open');
+    // reset after close animation
+    setTimeout(function() {
+        document.getElementById('md-resume-form-wrap').style.display = '';
+        document.getElementById('md-resume-success').style.display = 'none';
+    }, 200);
+}
+
+// Close on backdrop click
+document.getElementById('md-resume-overlay').addEventListener('click', function(e) {
+    if (e.target === this) mdCloseModal();
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') mdCloseModal();
+});
+
+function mdSubmitResume() {
+    // Collect values
+    var fname     = document.getElementById('md-fname').value.trim();
+    var lname     = document.getElementById('md-lname').value.trim();
+    var email     = document.getElementById('md-email').value.trim();
+    var phone     = document.getElementById('md-phone').value.trim();
+    var workType  = document.getElementById('md-work-type').value;
+    var workOther = document.getElementById('md-work-other').value.trim();
+    var licNum    = document.getElementById('md-license-num').value.trim();
+    var yrsExp    = document.getElementById('md-years-exp').value;
+    var quals     = document.getElementById('md-quals').value.trim();
+    var geoPrim   = document.getElementById('md-geo-primary').value.trim();
+    var geoRange  = document.getElementById('md-geo-range').value;
+    var geoNotes  = document.getElementById('md-geo-notes').value.trim();
+
+    // Validate required fields
+    if (!fname || !lname || !email || !workType || !geoPrim) {
+        alert('Please fill in all required fields (marked with *).');
+        return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+
+    // Collect checkboxes - disciplines
+    var disciplines = [];
+    document.querySelectorAll('#md-resume-modal .md-check-grid input[type="checkbox"]:checked').forEach(function(cb) {
+        disciplines.push(cb.value);
+    });
+
+    // Separate discipline checkboxes from cert checkboxes
+    var discList = [], certList = [];
+    document.querySelectorAll('#md-resume-modal .md-check-grid').forEach(function(grid, idx) {
+        grid.querySelectorAll('input[type="checkbox"]:checked').forEach(function(cb) {
+            if (idx === 0) discList.push(cb.value);
+            else certList.push(cb.value);
+        });
+    });
+
+    // Build email body
+    var body = [
+        'MIAM / MMIA - Member Availability Submission',
+        '=============================================',
+        '',
+        'CONTACT INFORMATION',
+        'Name:    ' + fname + ' ' + lname,
+        'Email:   ' + email,
+        'Phone:   ' + (phone || 'Not provided'),
+        '',
+        'TYPE OF WORK SOUGHT',
+        'Employment Type:   ' + workType,
+        'Disciplines:       ' + (discList.length ? discList.join(', ') : 'Not specified'),
+        'Other / Notes:     ' + (workOther || 'None'),
+        '',
+        'QUALIFICATIONS & CERTIFICATIONS',
+        'Certifications:    ' + (certList.length ? certList.join(', ') : 'Not specified'),
+        'License Number(s): ' + (licNum || 'Not provided'),
+        'Years Experience:  ' + (yrsExp || 'Not specified'),
+        'Additional Notes:  ' + (quals || 'None'),
+        '',
+        'GEOGRAPHIC AVAILABILITY',
+        'Primary Area:  ' + geoPrim,
+        'Travel Range:  ' + (geoRange || 'Not specified'),
+        'Notes:         ' + (geoNotes || 'None'),
+    ].join('\n');
+
+    var subject = 'Member Availability: ' + fname + ' ' + lname + ' - ' + workType;
+
+    // Open mailto
+    window.location.href = 'mailto:s_schippert@yahoo.com'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body='    + encodeURIComponent(body);
+
+    // Show success screen
+    document.getElementById('md-resume-form-wrap').style.display = 'none';
+    document.getElementById('md-resume-success').style.display = 'block';
+}
+</script>
