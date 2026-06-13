@@ -39,31 +39,49 @@
 
 /* Hero */
 #miam-dash .md-hero {
-    background: linear-gradient(180deg,#eaf5ff,#fff);
+    background: #e6f4fb;
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    padding: 36px 24px 28px;
+    padding: 28px;
     margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
 }
 
-#miam-dash .md-hero h2 {
-    font-size: clamp(1.6rem,4vw,3rem);
-    line-height: 1;
-    margin: 0 0 .6rem;
-    color: var(--blue);
+#miam-dash .md-hero-text h2 {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    font-weight: 700;
+    line-height: 1.45;
+    margin: 0 0 .75rem;
+    color: var(--text);
+    text-align: center;
 }
 
-#miam-dash .md-hero p {
-    font-size: clamp(.95rem,2vw,1.15rem);
+#miam-dash .md-hero-text p {
+    font-size: clamp(.9rem, 1.6vw, 1rem);
     margin: 0 0 1.2rem;
     color: #263a55;
-    max-width: 680px;
+    text-align: center;
 }
 
 #miam-dash .md-hero-actions {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+#miam-dash .md-hero-logo {
+    width: 140px;
+    flex-shrink: 0;
+}
+
+#miam-dash .md-hero-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Buttons */
@@ -97,7 +115,7 @@
 /* Grid */
 #miam-dash .md-grid {
     display: grid;
-    grid-template-columns: 1.1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 18px;
 }
 
@@ -452,6 +470,17 @@
     }
 }
 
+@media (max-width: 600px) {
+    #miam-dash .md-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    #miam-dash .md-hero-logo {
+        width: 100px;
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 500px) {
     #miam-dash .md-hero { padding: 22px 14px 18px; }
     #miam-dash .md-hero-actions .md-btn { width: 100%; }
@@ -464,12 +493,17 @@
 
     <!-- Hero -->
     <div class="md-hero">
-        <h2>Welcome to MIAM / MMIA</h2>
-        <p>Supporting Michigan Mechanical Inspectors through education and communication.</p>
-        <div class="md-hero-actions">
-            <a class="md-btn" href="https://www.mechanicalinspector.com/membership--dues.html">Pay Dues</a>
-            <a class="md-btn secondary" href="https://www.mechanicalinspector.com/061826.html">Register for Next Class</a>
-            <a class="md-btn secondary" href="https://www.mechanicalinspector.com/webinars.html">View Webinars</a>
+        <div class="md-hero-text">
+            <h2>Welcome! This website is a joint effort by the Mechanical Inspectors Association of Michigan (MIAM) and the Metropolitan Mechanical Inspectors Association (MMIA)</h2>
+            <p>Supporting Michigan Mechanical Inspectors, Code Officials, and Mechanical Contractors through education and communications</p>
+            <div class="md-hero-actions">
+                <a class="md-btn" href="https://www.mechanicalinspector.com/membership--dues.html">Pay Dues</a>
+                <a class="md-btn secondary" href="https://www.mechanicalinspector.com/061826.html">Register for Next Class</a>
+                <a class="md-btn secondary" href="https://www.mechanicalinspector.com/webinars.html">View Webinars</a>
+            </div>
+        </div>
+        <div class="md-hero-logo">
+            <img src="data:image/jpeg;base64,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" alt="MIAM &amp; MMIA Logo">
         </div>
     </div>
 
@@ -480,7 +514,6 @@
         <section class="md-card">
             <div class="md-card-head">
                 <h3>Upcoming Training &amp; Events</h3>
-                <a class="md-view" href="https://www.mechanicalinspector.com/education.html">View All</a>
             </div>
             <div class="md-body">
                 <div class="md-item">
@@ -510,6 +543,20 @@
             </div>
         </section>
 
+        <!-- Member Quick Links -->
+        <section class="md-card">
+            <div class="md-card-head">
+                <h3>Member Quick Links</h3>
+                <a class="md-view" href="https://www.mechanicalinspector.com/links.html">More</a>
+            </div>
+            <div class="md-body md-links">
+                <a href="https://www.mechanicalinspector.com/become-an-inspector.html">Become an Inspector <span>&rsaquo;</span></a>
+                <a href="https://www.mechanicalinspector.com/class-list.html">MIAM &amp; MMIA Class Listing <span>&rsaquo;</span></a>
+                <a href="https://www.mechanicalinspector.com/certificates.html">Certificates <span>&rsaquo;</span></a>
+                <a href="https://www.mechanicalinspector.com/contact-info.html">Contact Us <span>&rsaquo;</span></a>
+            </div>
+        </section>
+
         <!-- Code / LARA Updates -->
         <section class="md-card">
             <div class="md-card-head red">
@@ -525,20 +572,6 @@
             </div>
         </section>
 
-        <!-- Member Quick Links -->
-        <section class="md-card">
-            <div class="md-card-head">
-                <h3>Member Quick Links</h3>
-                <a class="md-view" href="https://www.mechanicalinspector.com/links.html">More</a>
-            </div>
-            <div class="md-body md-links">
-                <a href="https://www.mechanicalinspector.com/class-list.html">MIAM &amp; MMIA Class Listing <span>&rsaquo;</span></a>
-                <a href="https://www.mechanicalinspector.com/course-material-2015-2018.html">Course Materials <span>&rsaquo;</span></a>
-                <a href="https://www.mechanicalinspector.com/certificates.html">Certificates <span>&rsaquo;</span></a>
-                <a href="https://www.mechanicalinspector.com/contact-info.html">Contact Us <span>&rsaquo;</span></a>
-            </div>
-        </section>
-
     </div><!-- /md-grid -->
 
     <!-- Bottom row of cards -->
@@ -551,7 +584,7 @@
                 <a class="md-view" href="https://www.mechanicalinspector.com/sponsor-listing.html">View All</a>
             </div>
             <div class="md-body">
-                <p>Thank you to the organizations that support mechanical inspector education.</p>
+                <p>Thank you to the organizations that support Mechanical Inspector education.</p>
                 <div class="md-sponsor-row">
                     <a class="md-sponsor" href="https://www.mechanicalinspector.com/sponsor-listing.html">Sponsor Listing</a>
                     <a class="md-sponsor" href="https://www.mechanicalinspector.com/mmia-sponsorship-appeal.html">Sponsor MMIA</a>
@@ -566,7 +599,7 @@
                 <h3>Looking for Work?</h3>
             </div>
             <div class="md-body">
-                <p>View mechanical inspector openings or post your availability.</p>
+                <p>View Mechanical Inspector openings or post your availability.</p>
                 <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
                     <a class="md-btn secondary" href="https://www.mechanicalinspector.com/job-openings.html">View Job Board</a>
                     <button class="md-btn secondary" onclick="document.getElementById('md-resume-overlay').classList.add('open')">Post Your Resume</button>
@@ -580,7 +613,7 @@
                 <h3>About MIAM / MMIA</h3>
             </div>
             <div class="md-body">
-                <p>MIAM is a statewide organization supporting mechanical inspectors, building officials, contractors, utilities, and related professionals. MMIA serves Region 9 in southeastern Michigan.</p>
+                <p>MIAM is a statewide organization supporting Mechanical Inspectors, building officials, contractors, utilities, and related professionals. MMIA serves Region 9 in southeastern Michigan.</p>
                 <a class="md-btn secondary" href="https://miam-mmia.github.io/Dashboard/about-miam-mmia.html" target="_blank" style="margin-top:8px;display:inline-flex;">Learn More</a>
             </div>
         </section>
@@ -589,7 +622,7 @@
 
 </div><!-- /miam-dash -->
 
-<!-- ── Resume Modal ── -->
+<!-- â”€â”€ Resume Modal â”€â”€ -->
 <div id="md-resume-overlay" role="dialog" aria-modal="true" aria-labelledby="md-modal-title">
   <div id="md-resume-modal">
 
