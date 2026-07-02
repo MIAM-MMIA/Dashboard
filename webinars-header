@@ -1,0 +1,730 @@
+<!-- ============================================================
+     MIAM / MMIA Webinar Page Header â€” Weebly Embed Version
+     Paste this block into a Weebly "Embed Code" element at the
+     TOP of the Webinars page, above the existing content.
+     All special characters use HTML entities (no raw UTF-8).
+     ============================================================ -->
+
+<style>
+#miam-wb-header {
+    --navy:   #062b66;
+    --navy2:  #0a3f8a;
+    --red:    #c91f2d;
+    --gold:   #c8860a;
+    --light:  #f4f8fd;
+    --line:   #dbe5f1;
+    --text:   #12223a;
+    --muted:  #5f6f86;
+    --white:  #ffffff;
+    --radius: 14px;
+    --shadow: 0 8px 24px rgba(6,43,102,.13);
+
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.5;
+    box-sizing: border-box;
+    margin-bottom: 28px;
+}
+
+#miam-wb-header *, #miam-wb-header *::before, #miam-wb-header *::after {
+    box-sizing: border-box;
+}
+
+#miam-wb-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* â”€â”€ Hero band â”€â”€ */
+#miam-wb-header .wbh-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #031940 100%);
+    border-radius: var(--radius);
+    padding: 32px 32px 28px;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle diagonal stripe texture */
+#miam-wb-header .wbh-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(255,255,255,.025) 0px,
+        rgba(255,255,255,.025) 1px,
+        transparent 1px,
+        transparent 18px
+    );
+    pointer-events: none;
+}
+
+#miam-wb-header .wbh-hero-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: center;
+}
+
+#miam-wb-header .wbh-eyebrow {
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+#miam-wb-header .wbh-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.12;
+    margin: 0 0 10px;
+    color: var(--white);
+}
+
+#miam-wb-header .wbh-desc {
+    font-size: .95rem;
+    color: rgba(255,255,255,.8);
+    max-width: 560px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+#miam-wb-header .wbh-desc a {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+#miam-wb-header .wbh-desc a:hover {
+    color: #e8a820;
+}
+
+/* Credit stat block */
+#miam-wb-header .wbh-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 12px;
+    padding: 18px 22px;
+    text-align: center;
+    flex-shrink: 0;
+    min-width: 130px;
+}
+
+#miam-wb-header .wbh-stat-num {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+}
+
+#miam-wb-header .wbh-stat-label {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.7);
+    margin-top: 4px;
+    line-height: 1.3;
+}
+
+#miam-wb-header .wbh-credit-breakdown {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 14px;
+}
+
+#miam-wb-header .wbh-ctag {
+    font-size: .74rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 20px;
+    letter-spacing: .02em;
+}
+
+#miam-wb-header .wbh-ctag.t  { background: rgba(100,150,255,.25); color: #b8d0ff; }
+#miam-wb-header .wbh-ctag.pr { background: rgba(180,100,255,.25); color: #d8b8ff; }
+#miam-wb-header .wbh-ctag.ra { background: rgba(255,180,60,.22);  color: #ffd580; }
+#miam-wb-header .wbh-ctag.sp { background: rgba(60,200,120,.22);  color: #90eac0; }
+
+/* â”€â”€ Action strip â”€â”€ */
+#miam-wb-header .wbh-actions {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+#miam-wb-header .wbh-action-card {
+    flex: 1 1 0;
+    min-width: 0;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    transition: transform .15s, box-shadow .15s;
+}
+
+#miam-wb-header .wbh-action-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(6,43,102,.16);
+    text-decoration: none;
+}
+
+#miam-wb-header .wbh-action-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+#miam-wb-header .wbh-action-icon.form  { background: #fce8ff; }
+#miam-wb-header .wbh-action-icon.pay   { background: #e6f0ff; }
+#miam-wb-header .wbh-action-icon.reg   { background: #ffe6e6; }
+#miam-wb-header .wbh-action-icon.ans   { background: #e6fff2; }
+#miam-wb-header .wbh-action-icon.dl    { background: #fff8e6; }
+
+#miam-wb-header .wbh-action-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#miam-wb-header .wbh-action-icon.form svg { stroke: #7a009a; }
+#miam-wb-header .wbh-action-icon.pay svg  { stroke: var(--navy2); }
+#miam-wb-header .wbh-action-icon.reg svg { stroke: #c00; }
+#miam-wb-header .wbh-action-icon.ans svg { stroke: #0a6632; }
+#miam-wb-header .wbh-action-icon.dl  svg { stroke: #7a5c00; }
+
+/* â”€â”€ Download button row â”€â”€ */
+#miam-wb-header .wbh-dl-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+#miam-wb-header .wbh-dl-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 14px 18px;
+    background: var(--navy);
+    color: #fff !important;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: background .13s;
+}
+
+#miam-wb-header .wbh-dl-btn:hover {
+    background: var(--navy2);
+    text-decoration: none;
+}
+
+#miam-wb-header .wbh-dl-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: #fff;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+/* â”€â”€ Two-tab toggle bar â”€â”€ */
+#miam-wb-header .wbh-tab-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--line);
+    border-radius: var(--radius) var(--radius) 0 0;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+#miam-wb-header .wbh-tab {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 18px;
+    background: var(--light);
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-align: left;
+    text-decoration: none;
+    transition: background .13s;
+    border-bottom: 2px solid transparent;
+}
+
+#miam-wb-header .wbh-tab:first-child {
+    border-right: 1px solid var(--line);
+}
+
+#miam-wb-header .wbh-tab:hover {
+    background: #e8f0fa;
+}
+
+#miam-wb-header .wbh-tab svg {
+    width: 15px;
+    height: 15px;
+    stroke: var(--navy2);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+#miam-wb-header .wbh-tab-label {
+    flex: 1;
+}
+
+#miam-wb-header .wbh-chevron-tab {
+    width: 15px;
+    height: 15px;
+    stroke: var(--muted);
+    fill: none;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform .2s ease;
+    flex-shrink: 0;
+}
+
+#miam-wb-header .wbh-sheet-panel.open .wbh-chevron-tab,
+#miam-wb-header .wbh-tab-bar.open .wbh-chevron-tab {
+    transform: rotate(180deg);
+}
+
+/* â”€â”€ Answer sheet panel â”€â”€ */
+#miam-wb-header .wbh-sheet-panel {
+    border: 1px solid var(--line);
+    border-top: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+    overflow: hidden;
+}
+
+#miam-wb-header .wbh-sheet-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 18px;
+    background: var(--light);
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--navy);
+    gap: 10px;
+    text-align: left;
+}
+
+#miam-wb-header .wbh-sheet-toggle:hover {
+    background: #e8f0fa;
+}
+
+#miam-wb-header .wbh-sheet-toggle-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#miam-wb-header .wbh-sheet-toggle svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--navy2);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+#miam-wb-header .wbh-chevron {
+    width: 16px;
+    height: 16px;
+    stroke: var(--muted);
+    fill: none;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform .2s ease;
+    flex-shrink: 0;
+}
+
+#miam-wb-header .wbh-sheet-panel.open .wbh-chevron {
+    transform: rotate(180deg);
+}
+
+#miam-wb-header .wbh-sheet-body {
+    display: none;
+    padding: 0 18px 18px;
+    background: #fff;
+}
+
+#miam-wb-header .wbh-sheet-panel.open .wbh-sheet-body {
+    display: block;
+}
+
+#miam-wb-header .wbh-sheet-intro {
+    font-size: .88rem;
+    color: var(--muted);
+    padding: 12px 0 14px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 14px;
+}
+
+#miam-wb-header .wbh-sheet-intro a {
+    color: var(--navy2);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+#miam-wb-header .wbh-exp-group {
+    margin-bottom: 16px;
+}
+
+#miam-wb-header .wbh-exp-label {
+    font-size: .72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    color: var(--muted);
+    padding: 5px 0 8px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+#miam-wb-header .wbh-exp-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+#miam-wb-header .wbh-exp-dot.y26 { background: #c91f2d; }
+#miam-wb-header .wbh-exp-dot.y27 { background: #c8860a; }
+#miam-wb-header .wbh-exp-dot.y28 { background: #0f7a3e; }
+
+#miam-wb-header .wbh-course-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px 12px;
+    align-items: baseline;
+    padding: 5px 0;
+    border-bottom: 1px solid #f0f4fa;
+    font-size: .84rem;
+}
+
+#miam-wb-header .wbh-course-row:last-child { border-bottom: 0; }
+
+#miam-wb-header .wbh-cp {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: .77rem;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+#miam-wb-header .wbh-course-name {
+    color: var(--text);
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+#miam-wb-header .wbh-credits {
+    font-size: .77rem;
+    font-weight: 700;
+    color: var(--navy2);
+    white-space: nowrap;
+    text-align: right;
+}
+
+#miam-wb-header .wbh-sheet-dl {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 14px;
+    padding: .55rem 1rem;
+    background: var(--navy2);
+    color: #fff !important;
+    border-radius: 9px;
+    font-size: .88rem;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: background .13s;
+}
+
+#miam-wb-header .wbh-sheet-dl:hover { background: var(--navy); }
+
+#miam-wb-header .wbh-sheet-dl svg {
+    width: 15px;
+    height: 15px;
+    stroke: #fff;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#miam-wb-header .wbh-action-text strong {
+    display: block;
+    font-size: .88rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.25;
+    margin-bottom: 3px;
+}
+
+#miam-wb-header .wbh-action-text span {
+    font-size: .78rem;
+    color: var(--muted);
+    line-height: 1.4;
+}
+
+/* â”€â”€ Secondary nav (info-only series) â”€â”€ */
+#miam-wb-header .wbh-secondary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: var(--light);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+#miam-wb-header .wbh-secondary-label {
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    margin-right: 4px;
+    white-space: nowrap;
+}
+
+#miam-wb-header .wbh-sec-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: .45rem .9rem;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    color: var(--navy2);
+    font-size: .85rem;
+    font-weight: 700;
+    transition: .13s ease;
+    box-shadow: 0 2px 6px rgba(6,43,102,.07);
+}
+
+#miam-wb-header .wbh-sec-btn:hover {
+    background: var(--navy2);
+    color: var(--white);
+    border-color: var(--navy2);
+    text-decoration: none;
+}
+
+#miam-wb-header .wbh-sec-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@media (max-width: 860px) {
+    #miam-wb-header .wbh-actions {
+        flex-wrap: wrap;
+    }
+    #miam-wb-header .wbh-action-card {
+        flex: 1 1 calc(50% - 5px);
+    }
+}
+
+@media (max-width: 720px) {
+    #miam-wb-header .wbh-hero-inner {
+        grid-template-columns: 1fr;
+    }
+    #miam-wb-header .wbh-stats {
+        flex-direction: row;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 16px;
+        min-width: unset;
+    }
+    #miam-wb-header .wbh-stat-num { font-size: 2rem; }
+    #miam-wb-header .wbh-actions {
+        flex-wrap: wrap;
+    }
+    #miam-wb-header .wbh-action-card {
+        flex: 1 1 100%;
+    }
+    #miam-wb-header .wbh-course-row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+    #miam-wb-header .wbh-cp { font-size: .72rem; }
+}
+
+@media (max-width: 500px) {
+    #miam-wb-header .wbh-hero { padding: 22px 18px 20px; }
+}
+</style>
+
+<div id="miam-wb-header">
+
+    <!-- Hero band -->
+    <div class="wbh-hero">
+        <div class="wbh-hero-inner">
+            <div>
+                <div class="wbh-eyebrow">2024&ndash;2027 Webinar Series</div>
+                <h2 class="wbh-title">On-Demand For-Credit Webinars</h2>
+                <p class="wbh-desc">
+                    Pay the <strong>$200.00</strong> subscription fee for 2026 (dues-paid members), watch the webinar videos,
+                    complete the quiz(zes), then email your completed Registration Form and answer sheet(s) to
+                    <a href="mailto:s_schippert@yahoo.com">s_schippert@yahoo.com</a> to receive credit.
+                    Questions? See the <a href="https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/webinar_how_to.pdf" target="_blank">How-To Guide</a>.
+                </p>
+                <div class="wbh-credit-breakdown">
+                    <span class="wbh-ctag t">18 Technical</span>
+                    <span class="wbh-ctag pr">9 Plan Review</span>
+                    <span class="wbh-ctag sp">10 Specialty</span>
+                    <span class="wbh-ctag ra">10 Acts &amp; Rules</span>
+                </div>
+            </div>
+            <div class="wbh-stats">
+                <div class="wbh-stat-num">47</div>
+                <div class="wbh-stat-label">Total<br>Credits</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action strip -->
+    <div class="wbh-actions">
+
+        <a class="wbh-action-card" href="https://square.link/u/dWR1m912" target="_blank" rel="noopener">
+            <div class="wbh-action-icon pay">
+                <svg viewBox="0 0 24 24">
+                    <rect x="2" y="5" width="20" height="14" rx="2"/>
+                    <line x1="2" y1="10" x2="22" y2="10"/>
+                </svg>
+            </div>
+            <div class="wbh-action-text">
+                <strong>Step 1 &mdash; Pay Here</strong>
+                <span>$200 via Square &mdash; dues-paid members</span>
+            </div>
+        </a>
+
+        <a class="wbh-action-card" href="https://www.mechanicalinspector.com/webinars.html" target="_blank" rel="noopener">
+            <div class="wbh-action-icon reg">
+                <svg viewBox="0 0 24 24">
+                    <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+            </div>
+            <div class="wbh-action-text">
+                <strong>Step 2 &mdash; Watch the Video(s)</strong>
+                <span>View any webinar(s) from the list below</span>
+            </div>
+        </a>
+
+        <a class="wbh-action-card" href="https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/webinar_answer_sheet_rev_051826.pdf" target="_blank" rel="noopener">
+            <div class="wbh-action-icon dl">
+                <svg viewBox="0 0 24 24">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+            </div>
+            <div class="wbh-action-text">
+                <strong>Step 3 &mdash; Complete Quiz(zes)</strong>
+                <span>Download answer sheet, fill in &amp; sign</span>
+            </div>
+        </a>
+
+        <a class="wbh-action-card" href="mailto:s_schippert@yahoo.com">
+            <div class="wbh-action-icon ans">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="9 11 12 14 22 4"/>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                </svg>
+            </div>
+            <div class="wbh-action-text">
+                <strong>Step 4 &mdash; Email Sue Schippert</strong>
+                <span>Send completed Registration Form &amp; answer sheet(s)</span>
+            </div>
+        </a>
+
+    </div><!-- /wbh-actions -->
+
+    <!-- Download buttons -->
+    <div class="wbh-dl-row">
+        <a class="wbh-dl-btn" href="https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/webinar_answer_sheet_rev_051826.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download Answer Sheet (PDF)
+        </a>
+        <a class="wbh-dl-btn" href="https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/webinar_registration_-_rev_051826.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download Registration Form (PDF)
+        </a>
+    </div>
+
+    <!-- Secondary series nav -->
+    <div class="wbh-secondary">
+        <span class="wbh-secondary-label">Also Available:</span>
+        <a class="wbh-sec-btn" href="https://www.mechanicalinspector.com/non-credit-info-videos.html">
+            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Info-Only Webinars
+        </a>
+        <a class="wbh-sec-btn" href="https://www.mechanicalinspector.com/webinar-series-for-2021-2024.html">
+            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            2021&ndash;2024 Cycle Info-Only Webinars
+        </a>
+    </div>
+
+</div><!-- /miam-wb-header -->
+
+<script>
+</script>
