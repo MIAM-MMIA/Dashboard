@@ -1,0 +1,657 @@
+<!-- ============================================================
+     MIAM / MMIA Webinar Table â€” Weebly Embed Version
+     Paste this entire block into a Weebly "Embed Code" element.
+     All special characters use HTML entities (no raw UTF-8).
+     ============================================================ -->
+
+<style>
+#miam-webinars {
+    --blue:   #062b66;
+    --blue2:  #0a3f8a;
+    --light:  #f4f8fd;
+    --line:   #dbe5f1;
+    --text:   #12223a;
+    --muted:  #5f6f86;
+    --red:    #c91f2d;
+    --green:  #0f7a3e;
+    --shadow: 0 10px 28px rgba(6,43,102,.12);
+    --radius: 14px;
+
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.45;
+    box-sizing: border-box;
+}
+
+#miam-webinars *, #miam-webinars *::before, #miam-webinars *::after {
+    box-sizing: border-box;
+}
+
+#miam-webinars a {
+    color: var(--blue2);
+    text-decoration: none;
+}
+
+#miam-webinars a:hover {
+    text-decoration: underline;
+}
+
+/* Search bar */
+#miam-webinars .mw-search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+#miam-webinars .mw-search-input {
+    flex: 1;
+    min-width: 200px;
+    padding: .6rem .85rem;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    font-size: .97rem;
+    font-family: inherit;
+    color: var(--text);
+    background: #fff;
+    transition: border-color .15s;
+}
+
+#miam-webinars .mw-search-input:focus {
+    outline: none;
+    border-color: var(--blue2);
+    box-shadow: 0 0 0 3px rgba(10,63,138,.12);
+}
+
+#miam-webinars .mw-count {
+    font-size: .88rem;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+/* Table wrapper */
+#miam-webinars .mw-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+#miam-webinars table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .92rem;
+    min-width: 700px;
+}
+
+#miam-webinars thead tr {
+    background: var(--blue);
+    color: #fff;
+}
+
+#miam-webinars thead th {
+    padding: 11px 14px;
+    text-align: left;
+    font-weight: 700;
+    font-size: .82rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+}
+
+#miam-webinars thead th:hover {
+    background: var(--blue2);
+}
+
+#miam-webinars thead th .mw-sort-icon {
+    display: inline-block;
+    margin-left: 5px;
+    opacity: .55;
+    font-style: normal;
+}
+
+#miam-webinars thead th.sorted-asc .mw-sort-icon::after  { content: ' \25B2'; opacity: 1; }
+#miam-webinars thead th.sorted-desc .mw-sort-icon::after { content: ' \25BC'; opacity: 1; }
+#miam-webinars thead th:not(.sorted-asc):not(.sorted-desc) .mw-sort-icon::after { content: ' \25B2\25BC'; }
+
+#miam-webinars tbody tr {
+    border-bottom: 1px solid var(--line);
+    transition: background .1s;
+}
+
+#miam-webinars tbody tr:last-child {
+    border-bottom: 0;
+}
+
+#miam-webinars tbody tr:nth-child(even) {
+    background: var(--light);
+}
+
+#miam-webinars tbody tr:hover {
+    background: #e4edf9;
+}
+
+#miam-webinars td {
+    padding: 10px 14px;
+    vertical-align: top;
+}
+
+/* Column widths */
+#miam-webinars .col-title    { min-width: 220px; }
+#miam-webinars .col-approval { width: 130px; white-space: nowrap; }
+#miam-webinars .col-credits  { width: 190px; }
+#miam-webinars .col-expires  { width: 110px; white-space: nowrap; }
+#miam-webinars .col-links    { width: 90px;  white-space: nowrap; }
+
+/* Approval badge */
+#miam-webinars .mw-approval {
+    display: inline-block;
+    font-family: monospace;
+    font-size: .82rem;
+    background: var(--light);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 2px 7px;
+    color: var(--blue);
+    font-weight: 700;
+}
+
+/* Credit tags */
+#miam-webinars .mw-credit-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+#miam-webinars .mw-tag {
+    display: inline-block;
+    font-size: .76rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 5px;
+    letter-spacing: .03em;
+}
+
+#miam-webinars .mw-tag.t  { background: #e0ecff; color: #062b66; }
+#miam-webinars .mw-tag.pr { background: #f0e0ff; color: #4a1a8a; }
+#miam-webinars .mw-tag.ra { background: #fff0e0; color: #7a3a00; }
+#miam-webinars .mw-tag.sp { background: #e0fff0; color: #0a4a28; }
+#miam-webinars .mw-tag.n  { background: var(--light); color: var(--muted); }
+
+/* Link buttons */
+#miam-webinars .mw-link-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#miam-webinars .mw-pdf-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: .82rem;
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 7px;
+    border: 1px solid;
+    white-space: nowrap;
+    transition: .12s ease;
+}
+
+#miam-webinars .mw-pdf-btn.quiz {
+    border-color: var(--blue2);
+    color: var(--blue2);
+    background: #fff;
+}
+
+#miam-webinars .mw-pdf-btn.answers {
+    border-color: var(--green);
+    color: var(--green);
+    background: #fff;
+}
+
+#miam-webinars .mw-pdf-btn.watch {
+    border-color: #c00;
+    color: #c00;
+    background: #fff;
+}
+
+#miam-webinars .mw-pdf-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0,0,0,.12);
+    text-decoration: none;
+}
+
+/* Expiry warning */
+#miam-webinars .mw-exp-soon {
+    color: var(--red);
+    font-weight: 700;
+}
+
+/* No results */
+#miam-webinars .mw-no-results {
+    text-align: center;
+    padding: 32px;
+    color: var(--muted);
+    font-size: .97rem;
+}
+
+/* Legend */
+#miam-webinars .mw-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-top: 12px;
+    font-size: .82rem;
+    color: var(--muted);
+}
+
+#miam-webinars .mw-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+</style>
+
+<div id="miam-webinars">
+
+    <div class="mw-search-wrap">
+        <input
+            class="mw-search-input"
+            type="text"
+            id="mw-search"
+            placeholder="Search by title, approval number, or credit type&hellip;"
+            oninput="mwFilter()"
+            aria-label="Search webinars"
+        >
+        <span class="mw-count" id="mw-count"></span>
+    </div>
+
+    <div class="mw-table-wrap">
+        <table id="mw-table" aria-label="MIAM / MMIA Webinar Catalog">
+            <thead>
+                <tr>
+                    <th class="col-title"    onclick="mwSort(0)">Title <span class="mw-sort-icon"></span></th>
+                    <th class="col-approval" onclick="mwSort(1)">Approval No. <span class="mw-sort-icon"></span></th>
+                    <th class="col-credits"  onclick="mwSort(2)">Credits <span class="mw-sort-icon"></span></th>
+                    <th class="col-expires"  onclick="mwSort(3)">Expires <span class="mw-sort-icon"></span></th>
+                    <th class="col-links"    >Quiz &amp; Answers</th>
+                </tr>
+            </thead>
+            <tbody id="mw-tbody"></tbody>
+        </table>
+    </div>
+
+    <div class="mw-legend">
+        <span class="mw-legend-item"><span class="mw-tag t">T</span> Technical</span>
+        <span class="mw-legend-item"><span class="mw-tag pr">PR</span> Plan Review</span>
+        <span class="mw-legend-item"><span class="mw-tag ra">R&amp;A</span> Rules &amp; Acts</span>
+        <span class="mw-legend-item"><span class="mw-tag sp">SP</span> Specialty</span>
+    </div>
+
+</div><!-- /miam-webinars -->
+
+<script>
+var MW_DATA = [
+    {
+        title:    "Proper Installation of Flex Duct &mdash; Jeffrey Koss",
+        approval: "CP-25-00087",
+        total:    2,
+        credits:  [{qty:2, type:"t", label:"T"}],
+        audience: "BO, MI, PR",
+        expires:  "Sep 16, 2028",
+        expDate:  new Date("2028-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-25-00087_-_quiz.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-25-00087_-_q_a.pdf",
+        video:    "https://www.youtube.com/watch?v=2RsMFrtJNWA"
+    },
+    {
+        title:    "2021 Michigan Commercial Energy Code &mdash; Ed Bartram",
+        approval: "CP-26-00032",
+        total:    3,
+        credits:  [{qty:1,type:"pr",label:"PR"},{qty:1,type:"ra",label:"R&amp;A"},{qty:1,type:"t",label:"T"}],
+        audience: "ALL for PR &amp; R&amp;A; BI, MI, PI, MPR for T",
+        expires:  "Sep 16, 2028",
+        expDate:  new Date("2028-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-26-00032_-_quiz.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-26-00032_-_answers.pdf",
+        video:    "https://www.youtube.com/watch?v=EJGv971_bLI"
+    },
+    {
+        title:    "Ventilation Requirements for Hospitals and Ambulatory Care &mdash; Mark Riley",
+        approval: "CP-26-00034",
+        total:    3,
+        credits:  [{qty:1,type:"ra",label:"R&amp;A"},{qty:1,type:"sp",label:"SP"},{qty:1,type:"t",label:"T"}],
+        audience: "ALL for R&amp;A; BI, BO, MI for T &amp; SP",
+        expires:  "Sep 16, 2028",
+        expDate:  new Date("2028-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-26-00034_quiz.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-26-00034_q_a.pdf",
+        video:    "https://www.youtube.com/watch?v=O4xGAGMiUrI"
+    },
+    {
+        title:    "Understanding Hazardous Material Equipment &mdash; Ken Nightlinger",
+        approval: "CP-25-00025",
+        total:    4,
+        credits:  [{qty:1,type:"t",label:"T"},{qty:1,type:"ra",label:"R&amp;A"},{qty:1,type:"sp",label:"SP"},{qty:1,type:"pr",label:"PR"}],
+        audience: "ALL",
+        expires:  "Sep 16, 2028",
+        expDate:  new Date("2028-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/hazardous_materials_class_quiz.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/hazardous_materials_class_q_a.pdf",
+        video:    "https://www.youtube.com/watch?v=OGz4VuuwL5g"
+    },
+    {
+        title:    "Residential Energy Code Compliance for Mechanical Systems (2015 MRC, MEC, Part 10) &mdash; Ken Nightlinger",
+        approval: "CP-25-00116",
+        total:    3,
+        credits:  [{qty:1,type:"pr",label:"PR"},{qty:1,type:"sp",label:"SP"},{qty:1,type:"t",label:"T"}],
+        audience: "ALL",
+        expires:  "Sep 16, 2028",
+        expDate:  new Date("2028-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-25-00116_quiz.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-25-00116_answers.pdf",
+        video:    "https://www.youtube.com/watch?v=5KiJFyuJd1E"
+    },
+    {
+        title:    "Corrugated Stainless Steel (CSST) Gas Piping Inspector Training &mdash; Bob Torbin",
+        approval: "CP-24-00214-26",
+        total:    2,
+        credits:  [{qty:1,type:"t",label:"T"},{qty:1,type:"sp",label:"SP"}],
+        audience: "MI, BO, PR",
+        expires:  "Sep 16, 2026",
+        expDate:  new Date("2026-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/csst_quiz.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/csst_quiz_q_a.pdf",
+        video:    "https://www.youtube.com/watch?v=fWLPxeMmGVI"
+    },
+    {
+        title:    "MMC 2021 Ch. 11 Refrigeration &mdash; Updates on A2L &mdash; Mark Riley",
+        approval: "CP-24-00039",
+        total:    3,
+        credits:  [{qty:3,type:"t",label:"T"}],
+        audience: "MI, BO, PR",
+        expires:  "Sep 16, 2027",
+        expDate:  new Date("2027-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/refrigeration_quiz.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/refrigeration_quiz_with_answers.pdf",
+        video:    "https://www.youtube.com/watch?v=Vrfa84mA7T0"
+    },
+    {
+        title:    "MMC 2021 Ch. 4, Ventilation",
+        approval: "CP-24-00112",
+        total:    3,
+        credits:  [{qty:2,type:"t",label:"T"},{qty:1,type:"pr",label:"PR"}],
+        audience: "MI, PR",
+        expires:  "Sep 16, 2026",
+        expDate:  new Date("2026-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-24-00114_quiz_mmc_2021_chapter_4__ventilation_.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-24-00114_q_a_mmc_2021_chapter_4__ventilation_.pdf",
+        video:    "https://www.youtube.com/watch?v=lvmR-AF40Vk"
+    },
+    {
+        title:    "MMC 2021 Ch. 16 &mdash; Automatic Sprinkler Systems / NFPA 13 Updates",
+        approval: "CP-24-00202",
+        total:    3,
+        credits:  [{qty:1,type:"ra",label:"R&amp;A"},{qty:1,type:"sp",label:"SP"},{qty:1,type:"t",label:"T"}],
+        audience: "MI, BI, BO",
+        expires:  "Sep 16, 2026",
+        expDate:  new Date("2026-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/quiz.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/quiz_answers.pdf",
+        video:    "https://www.youtube.com/watch?v=uf6dWPjUnfY"
+    },
+    {
+        title:    "Plan Review Based on the 2021 MMC and 2021 IFGC Codes",
+        approval: "CP-24-00156",
+        total:    3,
+        credits:  [{qty:3,type:"pr",label:"PR"}],
+        audience: "ALL",
+        expires:  "Sep 16, 2026",
+        expDate:  new Date("2026-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/questions_for_plan_review_based_on_2021_mmc.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/answers_for_plan_review_based_on_2021_mmc.pdf",
+        video:    "https://www.youtube.com/watch?v=TXS_y011ml4"
+    },
+    {
+        title:    "Skilled Trades Regulation Act 407 of 2016 &mdash; Sec. 101, Rules Part 10, Article 10",
+        approval: "CP-24-00002",
+        total:    4,
+        credits:  [{qty:4,type:"ra",label:"R&amp;A"}],
+        audience: "ALL",
+        expires:  "Sep 16, 2026",
+        expDate:  new Date("2026-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-24-00002_rules___acts_qs.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-24-00002_rules___acts_q_a_.pdf",
+        video:    "https://www.youtube.com/watch?v=luG1iXE6LEs"
+    },
+    {
+        title:    "2015 MMC Ch. 3, Sec. 301&ndash;312 &mdash; General Requirements",
+        approval: "CP-24-00019",
+        total:    3,
+        credits:  [{qty:1,type:"ra",label:"R&amp;A"},{qty:2,type:"t",label:"T"}],
+        audience: "MI, BI, EI, BO, PR",
+        expires:  "Sep 16, 2026",
+        expDate:  new Date("2026-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/301-304_quiz.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/301-304_quiz_answers.pdf",
+        video:    "https://www.youtube.com/watch?v=OM3zNAoZVPs"
+    },
+    {
+        title:    "MMC 2021 Significant Changes",
+        approval: "CP-24-00045",
+        total:    3,
+        credits:  [{qty:1,type:"ra",label:"R&amp;A"},{qty:2,type:"t",label:"T"}],
+        audience: "MI",
+        expires:  "Sep 16, 2026",
+        expDate:  new Date("2026-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-24-00045_qs.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-24-00045_q_a.pdf",
+        video:    "https://www.youtube.com/watch?v=23DgooKJkyY"
+    },
+    {
+        title:    "MMC 2021 Ch. 11 Refrigeration &mdash; Introducing Puron Advance (R-454B)",
+        approval: "CP-24-00059",
+        total:    2,
+        credits:  [{qty:2,type:"sp",label:"SP"}],
+        audience: "MI",
+        expires:  "Sep 16, 2026",
+        expDate:  new Date("2026-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-24-00059__introducing_puron_advance__r-454b__questions_dec_17_2023_.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-24-00059_introducing_puron_advance__r-454b__question_answers_dec_17_2023.pdf",
+        video:    "https://www.youtube.com/watch?v=hFwi0eGRjPk"
+    },
+    {
+        title:    "Implementing 2021 Michigan Mechanical Code, Ch. 1&ndash;7",
+        approval: "CP-24-00060",
+        total:    3,
+        credits:  [{qty:1,type:"ra",label:"R&amp;A"},{qty:2,type:"t",label:"T"}],
+        audience: "MI",
+        expires:  "Sep 16, 2026",
+        expDate:  new Date("2026-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-24-00060_quiz.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-24-00060_q_a.pdf",
+        video:    "https://www.youtube.com/watch?v=HS_FPvYvUXo"
+    },
+    {
+        title:    "Implementing 2021 Michigan Mechanical Code, Ch. 8&ndash;17",
+        approval: "CP-24-00061",
+        total:    3,
+        credits:  [{qty:1,type:"ra",label:"R&amp;A"},{qty:2,type:"t",label:"T"}],
+        audience: "MI",
+        expires:  "Sep 16, 2026",
+        expDate:  new Date("2026-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-24-00061_q.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-24-00061_answers.pdf",
+        video:    "https://www.youtube.com/watch?v=DE0_TcDgRFc"
+    },
+    {
+        title:    "2015 MMC Fire Suppression Plan Review, NFPA 13 &mdash; Joe Hardin",
+        approval: "CP-23-00092",
+        total:    3,
+        credits:  [{qty:3,type:"pr",label:"PR"}],
+        audience: "ALL",
+        expires:  "Sep 16, 2027",
+        expDate:  new Date("2027-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/nfpa_13_shop_drawings_and_plan_review_quiz.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/nfpa_13_shop_drawings_and_plan_review_quiz_answeers.pdf",
+        video:    "https://www.youtube.com/watch?v=X5qQSG0kMY0"
+    },
+    {
+        title:    "2015 MMC Ch. 10, Sec. 1002 &mdash; Water Heaters &mdash; Rusty Scraggs",
+        approval: "CP-23-00093",
+        total:    2,
+        credits:  [{qty:2,type:"sp",label:"SP"}],
+        audience: "BI, MI, PI",
+        expires:  "Sep 16, 2027",
+        expDate:  new Date("2027-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/heat_pump_water_heater_quiz.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/heat_pump_water_heater_quiz_answers.pdf",
+        video:    "https://www.youtube.com/watch?v=sxj_T6w1lj4"
+    },
+    {
+        title:    "A2L Equipment &mdash; Pete Kiser",
+        approval: "CP-23-00109-26",
+        total:    2,
+        credits:  [{qty:2,type:"sp",label:"SP"}],
+        audience: "BI, MI",
+        expires:  "Sep 16, 2026",
+        expDate:  new Date("2026-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/quiz_-_cp-23-00109_cp_24_00059.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/q_a_-cp-23-001_09_cp-24-00059.pdf",
+        video:    "https://www.youtube.com/watch?v=BXFXVfgM7-Y"
+    },
+    {
+        title:    "A2L Refrigerants &mdash; Pete Kiser",
+        approval: "CP-25-00007",
+        total:    4,
+        credits:  [{qty:4,type:"t",label:"T"}],
+        audience: "MI, BI, PI",
+        expires:  "Sep 16, 2027",
+        expDate:  new Date("2027-09-16"),
+        quiz:     "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-25-00007_quiz_-_a2l___b-y.pdf",
+        answers:  "https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/cp-25-00007_answers_-_a2l___b-y.pdf",
+        video:    "https://youtu.be/a1FISwa7fGg"
+    }
+];
+
+var mwSortCol   = -1;
+var mwSortDir   = 1;
+var mwFiltered  = MW_DATA.slice();
+
+function mwCreditHTML(row) {
+    var html = '<div class="mw-credit-tags">';
+    row.credits.forEach(function(c) {
+        var qty = c.qty > 1 ? c.qty + ' ' : '';
+        html += '<span class="mw-tag ' + c.type + '">' + qty + c.label + '</span>';
+    });
+    html += '</div>';
+    html += '<div style="font-size:.8rem;color:var(--muted);margin-top:3px;">';
+    html += row.total + ' credit' + (row.total !== 1 ? 's' : '') + ' &mdash; ' + row.audience;
+    html += '</div>';
+    return html;
+}
+
+function mwExpireHTML(row) {
+    var soon = row.expDate <= new Date("2026-12-31");
+    var cls  = soon ? ' class="mw-exp-soon"' : '';
+    return '<span' + cls + '>' + row.expires + '</span>';
+}
+
+function mwLinksHTML(row) {
+    return '<div class="mw-link-row">'
+        + '<a class="mw-pdf-btn quiz"    href="' + row.quiz    + '" target="_blank" rel="noopener">&#128196; Quiz</a>'
+        + '<a class="mw-pdf-btn answers" href="' + row.answers + '" target="_blank" rel="noopener">&#10003; Answers</a>'
+        + '</div>';
+}
+
+function mwTitleHTML(row) {
+    return row.title
+        + '<div style="margin-top:6px;">'
+        + '<a class="mw-pdf-btn watch" href="' + row.video + '" target="_blank" rel="noopener">&#9654; Watch</a>'
+        + '</div>';
+}
+
+function mwRender() {
+    var tbody = document.getElementById('mw-tbody');
+    var count = document.getElementById('mw-count');
+    if (!mwFiltered.length) {
+        tbody.innerHTML = '<tr><td colspan="5" class="mw-no-results">No webinars match your search.</td></tr>';
+        count.textContent = '0 of ' + MW_DATA.length + ' webinars';
+        return;
+    }
+    var rows = '';
+    mwFiltered.forEach(function(r) {
+        rows += '<tr>'
+            + '<td class="col-title">'    + mwTitleHTML(r) + '</td>'
+            + '<td class="col-approval"><span class="mw-approval">' + r.approval + '</span></td>'
+            + '<td class="col-credits">'  + mwCreditHTML(r) + '</td>'
+            + '<td class="col-expires">'  + mwExpireHTML(r) + '</td>'
+            + '<td class="col-links">'    + mwLinksHTML(r)  + '</td>'
+            + '</tr>';
+    });
+    tbody.innerHTML = rows;
+    count.textContent = mwFiltered.length + ' of ' + MW_DATA.length + ' webinars';
+}
+
+function mwFilter() {
+    var q = document.getElementById('mw-search').value.toLowerCase().trim();
+    if (!q) {
+        mwFiltered = MW_DATA.slice();
+    } else {
+        mwFiltered = MW_DATA.filter(function(r) {
+            var haystack = [
+                r.title,
+                r.approval,
+                r.audience,
+                r.credits.map(function(c){ return c.label; }).join(' ')
+            ].join(' ').toLowerCase();
+            return haystack.indexOf(q) !== -1;
+        });
+    }
+    // re-apply current sort
+    if (mwSortCol >= 0) mwApplySort();
+    mwRender();
+}
+
+function mwSort(col) {
+    var ths = document.querySelectorAll('#miam-webinars thead th');
+    if (mwSortCol === col) {
+        mwSortDir = -mwSortDir;
+    } else {
+        mwSortCol = col;
+        mwSortDir = 1;
+    }
+    ths.forEach(function(th, i) {
+        th.classList.remove('sorted-asc', 'sorted-desc');
+        if (i === col) th.classList.add(mwSortDir === 1 ? 'sorted-asc' : 'sorted-desc');
+    });
+    mwApplySort();
+    mwRender();
+}
+
+function mwApplySort() {
+    var keys = ['title', 'approval', null, 'expires'];
+    mwFiltered.sort(function(a, b) {
+        var av, bv;
+        if (mwSortCol === 2) {
+            av = a.total; bv = b.total;
+        } else if (mwSortCol === 3) {
+            av = a.expDate; bv = b.expDate;
+        } else {
+            av = (a[keys[mwSortCol]] || '').toLowerCase();
+            bv = (b[keys[mwSortCol]] || '').toLowerCase();
+        }
+        if (av < bv) return -mwSortDir;
+        if (av > bv) return  mwSortDir;
+        return 0;
+    });
+}
+
+// Initial render
+mwFilter();
+</script>
