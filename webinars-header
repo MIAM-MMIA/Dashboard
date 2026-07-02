@@ -621,14 +621,14 @@
                     Questions? See the <a href="https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/webinar_how_to.pdf" target="_blank">How-To Guide</a>.
                 </p>
                 <div class="wbh-credit-breakdown">
-                    <span class="wbh-ctag t">18 Technical</span>
+                    <span class="wbh-ctag t">22 Technical</span>
                     <span class="wbh-ctag pr">9 Plan Review</span>
                     <span class="wbh-ctag sp">10 Specialty</span>
                     <span class="wbh-ctag ra">10 Acts &amp; Rules</span>
                 </div>
             </div>
             <div class="wbh-stats">
-                <div class="wbh-stat-num">47</div>
+                <div class="wbh-stat-num">51</div>
                 <div class="wbh-stat-label">Total<br>Credits</div>
             </div>
         </div>
@@ -662,7 +662,7 @@
             </div>
         </a>
 
-        <a class="wbh-action-card" href="https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/webinar_answer_sheet_rev_051826.pdf" target="_blank" rel="noopener">
+        <a class="wbh-action-card" href="https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/webinar_answer_sheet_rev_070126.pdf" target="_blank" rel="noopener">
             <div class="wbh-action-icon dl">
                 <svg viewBox="0 0 24 24">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
@@ -693,7 +693,7 @@
 
     <!-- Download buttons -->
     <div class="wbh-dl-row">
-        <a class="wbh-dl-btn" href="https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/webinar_answer_sheet_rev_051826.pdf" target="_blank" rel="noopener">
+        <a class="wbh-dl-btn" href="https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/webinar_answer_sheet_rev_070126.pdf" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                 <polyline points="7 10 12 15 17 10"/>
@@ -701,7 +701,7 @@
             </svg>
             Download Answer Sheet (PDF)
         </a>
-        <a class="wbh-dl-btn" href="https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/webinar_registration_-_rev_051826.pdf" target="_blank" rel="noopener">
+        <a class="wbh-dl-btn" href="https://www.mechanicalinspector.com/uploads/7/2/4/8/72481723/webinar_registration_-_rev_070126.pdf" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                 <polyline points="7 10 12 15 17 10"/>
