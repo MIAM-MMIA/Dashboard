@@ -114,16 +114,30 @@
 
 /* Grid */
 #miam-dash .md-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: row;
     gap: 18px;
 }
 
+#miam-dash .md-grid > .md-card {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+#miam-dash .md-grid > .md-card-wide {
+    flex: 1.5 1 0;
+}
+
 #miam-dash .md-lower {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: row;
     gap: 18px;
     margin-top: 18px;
+}
+
+#miam-dash .md-lower > .md-card {
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 /* Cards */
@@ -169,7 +183,7 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 12px;
-    align-items: center;
+    align-items: start;
     padding: 12px 0;
     border-bottom: 1px solid var(--line);
 }
@@ -204,14 +218,15 @@
 
 #miam-dash .md-item h4 {
     margin: 0 0 2px;
-    font-size: 1rem;
+    font-size: .93rem;
     color: var(--text);
+    line-height: 1.35;
 }
 
 #miam-dash .md-item p {
     margin: 0;
     color: var(--muted);
-    font-size: .9rem;
+    font-size: .85rem;
 }
 
 #miam-dash .md-mini-btn {
@@ -222,6 +237,7 @@
     font-weight: 700;
     font-size: .86rem;
     white-space: nowrap;
+    margin-top: 2px;
 }
 
 /* Link lists */
@@ -466,7 +482,7 @@
 @media (max-width: 860px) {
     #miam-dash .md-grid,
     #miam-dash .md-lower {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 }
 
@@ -511,7 +527,7 @@
     <div class="md-grid">
 
         <!-- Upcoming Training -->
-        <section class="md-card">
+        <section class="md-card md-card-wide">
             <div class="md-card-head">
                 <h3>Upcoming Training &amp; Events</h3>
             </div>
@@ -633,7 +649,7 @@
 
 </div><!-- /miam-dash -->
 
-<!-- â”€â”€ Resume Modal â”€â”€ -->
+<!-- Ã¢â€â‚¬Ã¢â€â‚¬ Resume Modal Ã¢â€â‚¬Ã¢â€â‚¬ -->
 <div id="md-resume-overlay" role="dialog" aria-modal="true" aria-labelledby="md-modal-title">
   <div id="md-resume-modal">
 
